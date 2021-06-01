@@ -1,0 +1,46 @@
+﻿<div id="email-verification-card" style="display: none">
+    <!--FORM SECTION-->
+    <img class="card-img-top p-3" src="~/Icons/checkYourEmail.gif" alt="yey-gif">
+
+    <form id="emailVerificationForm" class="list-group list-group-flush">
+        <div>
+            <div class="form-floating border-top">
+                <input type="text" class="form-control rounded-0 fw-bolder validatable" id="floatingVerificationEmail" required minlength="6" maxlength="6">
+                <label for="floatingVerificationEmail">Verification Code</label>
+                <div class="invalid-feedback text-danger p-1 ms-2"></div>
+            </div>
+        </div>
+    </form>
+    <hr />
+    <!--FOOTER SECTION-->
+    <div class="card-body pt-0 pb-3 ps-0 pe-0">
+        <div class="scrolable-footer">
+            <!--SUB FORM AND BUTTONS SECTION-->
+            <div class="bg-white mt-4 mb-2 ms-1 me-1 d-flex">
+                <div class="form-check p-0 d-flex justify-content-evenly align-self-center w-100">
+                    <button id="back-to-upload" type="button" class="additionalSettingsToggle align-self-center m-1">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>                    
+                    <button id="fake-verification" type="submit" class="btn btn-primary align-self-center w-75 m-1 disabled">
+                        Verify
+                    </button>                    
+                </div>
+            </div>
+        </div>
+        
+        <div id="file-counter-response" class="text-center">
+            <p id="verification-response-text" class="text-muted" style="font-size: 11px">
+                Enter the recieved code and press Verify
+            </p>
+        </div>
+
+        <div class="text-center m-3">
+            <a id="resend-email-verification" class="text-muted" href="" style="text-decoration: none;">
+                <h6 id="resend-email-text">
+                    Resend Email
+                </h6>
+            </a>
+        </div>
+        
+    </div>
+</div>

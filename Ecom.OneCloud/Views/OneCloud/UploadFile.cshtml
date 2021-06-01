@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Upload File";
+}
+
+@section HeadSection{
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/21.1.2beta/css/dx.light.css">
+    <link rel="stylesheet" type="text/css" href="/css/fileUpload.css" />
+    <link rel="stylesheet" type="text/css" href="~/lib/font-awesome/css/all.css" />
+}
+
+<div id="container-fluid" class="container-fluid">
+    @await Html.PartialAsync("~/Views/Partial/UploadFile/_DragAndDropDetectors.cshtml")
+    @await Html.PartialAsync("~/Views/Partial/UploadFile/_DropZones.cshtml")
+    @await Html.PartialAsync("~/Views/Partial/Mobile/_UploadFilesButton.cshtml")
+
+    <div class="card col-3" style="width: 18rem;">
+        @await Html.PartialAsync("~/Views/Partial/UploadFile/_UploadCard.cshtml")
+        @await Html.PartialAsync("~/Views/Partial/UploadFile/_EmailSentUploadedCard.cshtml")
+        @await Html.PartialAsync("~/Views/Partial/UploadFile/_GetLinkUploadedCard.cshtml")
+        @await Html.PartialAsync("~/Views/Partial/UploadFile/_EmailVerificationCard.cshtml")
+        @await Html.PartialAsync("~/Views/Partial/_ErrorCard.cshtml")
+    </div>
+    @await Html.PartialAsync("~/Views/Partial/_CommercialZone.cshtml")
+</div>
+
+@section Scripts {
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/21.1.2beta/js/dx.all.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/js/fileUpload.js"></script>
+    <script src="~/js/fileUploadInteractivity.js"></script>
+}

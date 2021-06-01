@@ -1,0 +1,34 @@
+﻿@model Ecom.OneCloud.Models.ViewModels.DownloadFileViewModel
+
+@{
+    ViewData["Title"] = "Download File";
+}
+
+@section HeadSection{
+    <link rel="stylesheet" type="text/css" href="~/css/fileDownload.css" />
+    <link rel="stylesheet" type="text/css" href="~/lib/font-awesome/css/all.css" />
+}
+
+<div id="container-fluid" class="container-fluid">
+
+    @await Html.PartialAsync("~/Views/Partial/Mobile/_DownloadFilesButton.cshtml")
+
+    <div class="card col-3" style="width: 18rem;">
+        @if (Model.LinkIsExpired || !Model.DownloadItems.Any())
+        {
+            @await Html.PartialAsync("~/Views/Partial/DownloadFile/_LinkExpiredCard.cshtml")
+        }
+        else
+        {
+            @await Html.PartialAsync("~/Views/Partial/DownloadFile/_DownloadCard.cshtml", Model)
+        }
+
+        @await Html.PartialAsync("~/Views/Partial/_ErrorCard.cshtml")
+    </div>
+
+    @await Html.PartialAsync("~/Views/Partial/_CommercialZone.cshtml")
+</div>
+
+@section Scripts {
+    <script src="~/js/fileDownload.js"></script>
+}

@@ -1,0 +1,49 @@
+﻿@model Ecom.OneCloud.Models.ViewModels.DownloadFileViewModel
+
+<div id="download-card">
+    <div class="files-container p-1">
+        @foreach (var item in Model.DownloadItems)
+        {
+            <div class="row border-bottom m-0">
+                <div class="col-9">
+                    <div class="row m-2 p-1">
+                        <div class="col-12">
+                            @item.FileName
+                        </div>
+                        <span class="text-muted col" style="font-size: 10px; font-weight: 400;">
+                            @{
+                                var fileSize = ((item.FileSize / 1024f) / 1024f).ToString("0.00");
+                            }
+                            @fileSize mb
+                        </span>
+                    </div>
+                </div>
+                <a class="sasDownloader col-3 download-item-btn d-flex justify-content-center align-items-center" href="@item.SasUrl" data-fileId="@item.FileId">
+                    <i class="fas fa-cloud-download-alt"></i>
+                </a>
+            </div>
+        }
+    </div>
+    <!--FOOTER SECTION-->
+    <div class="card-body pt-0 pb-3 ps-0 pe-0">
+        <div class="scrolable-footer">
+            <!--SUB FORM AND BUTTONS SECTION-->
+            <div class="bg-white mt-4 mb-2 ms-1 me-1 d-grid justify-content-center">
+                <div class="text-center">
+                    <h6 class="text-muted">
+                        Download your files
+                    </h6>
+                    <p class="text-muted m-0">or</p>
+                    <a class="text-muted" asp-controller="OneCloud" asp-action="UploadFile">
+                        Upload new files
+                    </a>
+                </div>
+                <div class="form-check mt-3 mb-3 p-0 w-100 text-center">
+                    <button id="fake-download" type="submit" class="btn btn-primary align-self-center w-75 m-1">
+                        Download
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

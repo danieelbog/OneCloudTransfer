@@ -1,0 +1,137 @@
+﻿/*GENERAL CSS*/
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+hr {
+    margin: 0.5px;
+}
+
+.container-fluid {
+    height: 100vh !important;
+    margin: 0px;
+}
+
+.navbar {
+    position: absolute;
+    z-index: 3;
+}
+
+
+/*CARD CSS*/
+.card {
+    z-index: 3;
+    border-radius: 22px;
+    min-height: max-content !important;
+    position: absolute;
+    top: 25%;
+    left: 5rem;
+    right: 5rem !important;
+}
+
+.segment-size,
+.loaded-size {
+    margin-left: 3px;
+}
+
+.note {
+    display: block;
+    font-size: 10pt;
+    color: #484848;
+    margin-left: 9px;
+}
+
+    .note > span {
+        font-weight: 700
+    }
+
+.fa-cloud-download-alt {
+    color: #484848;
+}
+
+.files-container {
+    max-height: 18rem;
+    overflow-y: auto;
+}
+
+/*CUSTOM FORM CSS*/
+.message-text {
+    padding: 30px 0 !important;
+}
+
+.buttons-footer {
+    height: 5rem;
+}
+
+.uploader-fileds {
+    max-height: 5rem;
+}
+
+/*COMMERCIAL ZONE CSS*/
+.commercial-cover {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.commercial-iframe {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/*CUSTOM SCROLLBAR CSS*/
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #409fff;
+    border-radius: 10px;
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #407eff;
+    }
+
+/*MOBILE*/
+#mobile-show-download-card-button {
+    z-index: 4;
+    position: relative;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    border: 3px white solid;
+    padding: 0.5rem;
+    display: none;
+}
+
+.download-mobile-plus {
+    color: white;
+    font-size: 40px;
+}
+
+#mobile-show-download-card-button:hover {
+    background: rgba(2,0,36, 0.7);
+}

@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Ecom.OneCloud</title>
+    <link rel="stylesheet" href="~/lib/bootstrap-5.0.1-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/loader.css" />
+    @RenderSection("HeadSection", false)
+</head>
+<body>
+    @*<nav class="navbar bg-transparent">
+        <a class="navbar-brand p-3" asp-controller="OneCloud" asp-action="UploadFile">
+            <img src="/Icons/happy-cloud.png" height="60" width="60" class="d-inline-block align-top img-fluid" alt="">
+        </a>
+    </nav>*@
+    @RenderBody()
+
+    <div id="loader"></div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap-5.0.1-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/loader.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
